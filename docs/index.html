@@ -33,13 +33,13 @@
 
             const p = new pmtiles.PMTiles(PMTILES_URL);
             protocol.add(p);
-
+		//NaD3GBLhhnQmtB3BWdnM
             p.getHeader().then(h => {
                 const map = new maplibregl.Map({
                     container: 'map',
                     zoom: h.maxZoom-13,
                     center: [h.centerLon, h.centerLat],
-		    style: 'https://api.maptiler.com/maps/dataviz/style.json?key=NaD3GBLhhnQmtB3BWdnM'
+		    style: 'https://api.maptiler.com/maps/dataviz/style.json?key= mMjYFidONxivastOGV2C'
 		});
 
                 map.on('load', function() {
