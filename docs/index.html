@@ -29,7 +29,7 @@
             let protocol = new pmtiles.Protocol();
             maplibregl.addProtocol("pmtiles",protocol.tile);
 
-            let PMTILES_URL = "lts.pmtiles";
+            let PMTILES_URL = "https://drive.straba.us/lts.pmtiles";
 
             const p = new pmtiles.PMTiles(PMTILES_URL);
             protocol.add(p);
