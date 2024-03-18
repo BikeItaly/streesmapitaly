@@ -43,12 +43,28 @@
 		});
 
                 map.on('load', function() {
-                    map.addSource("lts", {
+		    map.addSource("esri", {
+		      type: "raster",
+	              tiles: [
+                        'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+                      ],
+                      tileSize: 256
+		    });
+		 map.addSource("lts", {
                         type: "vector",
                         url: "pmtiles://" + PMTILES_URL,
                         attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>'
                     });
-		     
+
+		map.addLayer(
+                {
+                    id: 'esri',
+                    type: 'raster',
+                    source: 'esri-world-topo',
+                    minzoom: 0,
+                    maxzoom: 22
+                });
+			
 		const targets = {
 		 'lts0': '0',
 		 'lts1': '1',
